@@ -1,0 +1,47 @@
+{
+    "author": "Rick Li",
+    "classifications": [ "WebAPI" ],
+    "name": "Pccl.ProjectTemplate",
+    "identity": "Pccl.ProjectTemplate",
+    "shortName": "ppt",
+    "tags": {
+      "language": "C#" ,
+      "type":"project"
+    },
+    "sourceName": "Pccl.ProjectTemplate",
+    "preferNameDirectory": true,
+	 "symbols":{
+    "sqlType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "mssql",
+          "description": "MS SQL Server"
+        },
+        {
+          "choice": "mysql",
+          "description": "MySQL"
+        },
+        {
+          "choice": "sqlite",
+          "description": "Sqlite"
+        }
+      ],
+      "defaultValue": "mssql",
+      "description": "The type of SQL to use"
+    },  
+    "mssql": {
+      "type": "computed",
+      "value": "(sqlType == \"mssql\")"
+    },
+    "mysql": {
+      "type": "computed",
+      "value": "(sqlType == \"mysql\")"
+    },
+    "sqlite": {
+      "type": "computed",
+      "value": "(sqlType == \"sqlite\")"
+    }
+  }
+}
